@@ -213,8 +213,23 @@
 		<!--The list of transitions.-->
 		<transition>
 			<from>0</from>
-			<to>6</to>
-			<read>-</read>
+			<to>1</to>
+			<read>*</read>
+		</transition>
+		<transition>
+			<from>12</from>
+			<to>30</to>
+			<read>[^=]</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>10</to>
+			<read>}</read>
+		</transition>
+		<transition>
+			<from>21</from>
+			<to>22</to>
+			<read>[O-9]</read>
 		</transition>
 		<transition>
 			<from>5</from>
@@ -222,19 +237,34 @@
 			<read>[^"\n]</read>
 		</transition>
 		<transition>
-			<from>3</from>
-			<to>20</to>
-			<read>+</read>
+			<from>0</from>
+			<to>17</to>
+			<read>,</read>
 		</transition>
 		<transition>
-			<from>3</from>
-			<to>11</to>
-			<read>[^+]</read>
+			<from>34</from>
+			<to>35</to>
+			<read>[^\/\*]</read>
 		</transition>
 		<transition>
-			<from>26</from>
-			<to>25</to>
+			<from>36</from>
+			<to>37</to>
+			<read>\n</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>%</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>4</to>
 			<read>[0-9]</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>21</to>
+			<read>.</read>
 		</transition>
 		<transition>
 			<from>22</from>
@@ -243,43 +273,33 @@
 		</transition>
 		<transition>
 			<from>0</from>
-			<to>4</to>
-			<read>[0-9]</read>
+			<to>34</to>
+			<read>/</read>
 		</transition>
 		<transition>
-			<from>34</from>
-			<to>35</to>
-			<read>[^\/\*]</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>15</to>
-			<read>!</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>2</to>
-			<read>;</read>
-		</transition>
-		<transition>
-			<from>6</from>
+			<from>3</from>
 			<to>11</to>
-			<read>[^-]</read>
+			<read>[^+]</read>
 		</transition>
 		<transition>
-			<from>8</from>
-			<to>28</to>
-			<read>[^0-9a-zA-Z]</read>
+			<from>31</from>
+			<to>1</to>
+			<read>&amp;</read>
 		</transition>
 		<transition>
-			<from>12</from>
-			<to>19</to>
-			<read>=</read>
+			<from>0</from>
+			<to>18</to>
+			<read>{</read>
 		</transition>
 		<transition>
-			<from>25</from>
-			<to>27</to>
-			<read>[^0-9]</read>
+			<from>24</from>
+			<to>26</to>
+			<read>-</read>
+		</transition>
+		<transition>
+			<from>38</from>
+			<to>38</to>
+			<read>[^\*]</read>
 		</transition>
 		<transition>
 			<from>39</from>
@@ -287,19 +307,24 @@
 			<read>/</read>
 		</transition>
 		<transition>
-			<from>36</from>
-			<to>37</to>
-			<read>\n</read>
+			<from>24</from>
+			<to>26</to>
+			<read>+</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>9</to>
+			<read>.</read>
 		</transition>
 		<transition>
 			<from>34</from>
-			<to>36</to>
-			<read>/</read>
+			<to>38</to>
+			<read>*</read>
 		</transition>
 		<transition>
-			<from>22</from>
-			<to>27</to>
-			<read>[^0-9eE]</read>
+			<from>12</from>
+			<to>19</to>
+			<read>=</read>
 		</transition>
 		<transition>
 			<from>0</from>
@@ -308,28 +333,13 @@
 		</transition>
 		<transition>
 			<from>0</from>
-			<to>16</to>
-			<read>false</read>
+			<to>12</to>
+			<read>&gt;</read>
 		</transition>
 		<transition>
 			<from>0</from>
-			<to>7</to>
-			<read>=</read>
-		</transition>
-		<transition>
-			<from>21</from>
-			<to>27</to>
-			<read>[^0-9]</read>
-		</transition>
-		<transition>
-			<from>21</from>
-			<to>22</to>
-			<read>[O-9]</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>17</to>
-			<read>,</read>
+			<to>12</to>
+			<read>&lt;</read>
 		</transition>
 		<transition>
 			<from>22</from>
@@ -338,58 +348,8 @@
 		</transition>
 		<transition>
 			<from>0</from>
-			<to>32</to>
-			<read>|</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>8</to>
-			<read>[a-zA-Z]</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>34</to>
-			<read>/</read>
-		</transition>
-		<transition>
-			<from>5</from>
-			<to>23</to>
-			<read>"</read>
-		</transition>
-		<transition>
-			<from>4</from>
-			<to>4</to>
-			<read>[0-9]</read>
-		</transition>
-		<transition>
-			<from>22</from>
-			<to>22</to>
-			<read>[0-9]</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>12</to>
-			<read>&gt;</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>9</to>
-			<read>.</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>18</to>
-			<read>{</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>12</to>
-			<read>&lt;</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>3</to>
-			<read>+</read>
+			<to>16</to>
+			<read>true</read>
 		</transition>
 		<transition>
 			<from>7</from>
@@ -397,9 +357,44 @@
 			<read>[^=]</read>
 		</transition>
 		<transition>
-			<from>39</from>
-			<to>38</to>
-			<read>[^\/]</read>
+			<from>5</from>
+			<to>23</to>
+			<read>"</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>3</to>
+			<read>+</read>
+		</transition>
+		<transition>
+			<from>22</from>
+			<to>22</to>
+			<read>[0-9]</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>33</to>
+			<read>[^0-9/.]</read>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>4</to>
+			<read>[0-9]</read>
+		</transition>
+		<transition>
+			<from>32</from>
+			<to>1</to>
+			<read>|</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read>;</read>
+		</transition>
+		<transition>
+			<from>22</from>
+			<to>27</to>
+			<read>[^0-9eE]</read>
 		</transition>
 		<transition>
 			<from>0</from>
@@ -408,33 +403,38 @@
 		</transition>
 		<transition>
 			<from>0</from>
-			<to>14</to>
-			<read>(</read>
+			<to>5</to>
+			<read>"</read>
 		</transition>
 		<transition>
-			<from>24</from>
-			<to>25</to>
-			<read>[0-9]</read>
-		</transition>
-		<transition>
-			<from>34</from>
+			<from>39</from>
 			<to>38</to>
-			<read>*</read>
+			<read>[^\/]</read>
 		</transition>
 		<transition>
-			<from>0</from>
-			<to>10</to>
-			<read>}</read>
-		</transition>
-		<transition>
-			<from>4</from>
-			<to>21</to>
-			<read>.</read>
+			<from>6</from>
+			<to>20</to>
+			<read>-</read>
 		</transition>
 		<transition>
 			<from>9</from>
 			<to>22</to>
 			<read>[0-9]</read>
+		</transition>
+		<transition>
+			<from>34</from>
+			<to>36</to>
+			<read>/</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>8</to>
+			<read>[a-zA-Z]</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>15</to>
+			<read>!</read>
 		</transition>
 		<transition>
 			<from>8</from>
@@ -447,14 +447,14 @@
 			<read>=</read>
 		</transition>
 		<transition>
-			<from>6</from>
-			<to>20</to>
-			<read>-</read>
+			<from>0</from>
+			<to>32</to>
+			<read>|</read>
 		</transition>
 		<transition>
-			<from>12</from>
-			<to>30</to>
-			<read>[^=]</read>
+			<from>21</from>
+			<to>27</to>
+			<read>[^0-9]</read>
 		</transition>
 		<transition>
 			<from>36</from>
@@ -462,39 +462,19 @@
 			<read>[^\n]</read>
 		</transition>
 		<transition>
-			<from>32</from>
-			<to>1</to>
-			<read>|</read>
-		</transition>
-		<transition>
-			<from>38</from>
-			<to>39</to>
-			<read>*</read>
-		</transition>
-		<transition>
-			<from>4</from>
-			<to>33</to>
-			<read>[^0-9/.]</read>
-		</transition>
-		<transition>
-			<from>24</from>
-			<to>26</to>
+			<from>0</from>
+			<to>6</to>
 			<read>-</read>
 		</transition>
 		<transition>
 			<from>0</from>
-			<to>1</to>
-			<read>%</read>
+			<to>7</to>
+			<read>=</read>
 		</transition>
 		<transition>
-			<from>31</from>
-			<to>1</to>
-			<read>&amp;</read>
-		</transition>
-		<transition>
-			<from>24</from>
-			<to>26</to>
-			<read>+</read>
+			<from>0</from>
+			<to>16</to>
+			<read>false</read>
 		</transition>
 		<transition>
 			<from>7</from>
@@ -502,14 +482,34 @@
 			<read>=</read>
 		</transition>
 		<transition>
-			<from>0</from>
-			<to>16</to>
-			<read>true</read>
+			<from>38</from>
+			<to>39</to>
+			<read>*</read>
+		</transition>
+		<transition>
+			<from>6</from>
+			<to>11</to>
+			<read>[^-]</read>
 		</transition>
 		<transition>
 			<from>0</from>
-			<to>1</to>
-			<read>*</read>
+			<to>14</to>
+			<read>(</read>
+		</transition>
+		<transition>
+			<from>26</from>
+			<to>25</to>
+			<read>[0-9]</read>
+		</transition>
+		<transition>
+			<from>25</from>
+			<to>27</to>
+			<read>[^0-9]</read>
+		</transition>
+		<transition>
+			<from>8</from>
+			<to>28</to>
+			<read>[^0-9a-zA-Z]</read>
 		</transition>
 		<transition>
 			<from>25</from>
@@ -517,9 +517,14 @@
 			<read>[O-9]</read>
 		</transition>
 		<transition>
-			<from>0</from>
-			<to>5</to>
-			<read>"</read>
+			<from>3</from>
+			<to>20</to>
+			<read>+</read>
+		</transition>
+		<transition>
+			<from>24</from>
+			<to>25</to>
+			<read>[0-9]</read>
 		</transition>
 	</automaton>
 </structure>
