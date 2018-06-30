@@ -32,7 +32,9 @@ void simulateAutomata(buffer * b, FILE * f){
 
 	char c;
 	int hasReturn;
-
+        
+        printf("token@lexema@linha@coluna\n");
+        
 	while(1){
 
 		c = readNext(b,f);
@@ -67,6 +69,9 @@ void simulateAutomata(buffer * b, FILE * f){
 			case  OPERADOR_2:
 				current_state = operador_2(c);
 				break;
+                        case  OPERADOR_4:
+                                current_state = operador_4(c);
+                                break;
 			case  OPERADOR_RELACIONAL_1:
 				current_state = operador_relacional_1(c);
 				break;
@@ -91,7 +96,9 @@ void simulateAutomata(buffer * b, FILE * f){
 			case Q13:
 				current_state = q13(c);
 				break;
-
+                        case Q15:
+                                current_state =q15(c);
+                                break;
 			default:
 				current_state = Q0;
 
@@ -111,6 +118,9 @@ void simulateAutomata(buffer * b, FILE * f){
 			case TAB:
 				tab(b);
 				break;
+                        case COMENTARIO:
+                                comentario(b);
+                                break;
 			case Q5:
 				q5(b);
 				break;
@@ -155,6 +165,9 @@ void simulateAutomata(buffer * b, FILE * f){
 			case Q10:
 				q10(b);
 				break;
+                        case Q14:
+                                q14(b);
+                                break;
 			case OPERADOR_RELACIONAL_2:
 				operador_relacional_2(b);
 				break;

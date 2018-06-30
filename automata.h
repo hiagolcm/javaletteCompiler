@@ -6,6 +6,7 @@
 #include "buffer.h"
 #include "token.h"
 
+
 typedef enum{
 	INTEIRO,
 	PONTO_FLUTUANTE_1,PONTO_FLUTUANTE_2,PONTO_FLUTUANTE_3,
@@ -19,10 +20,11 @@ typedef enum{
 	FECHA_CHAVES,
 	VIRGULA,
 	ATRIBUICAO,
-	OPERADOR_1,OPERADOR_2,OPERADOR_3,
+	OPERADOR_1,OPERADOR_2,OPERADOR_3,OPERADOR_4,
 	OPERADOR_RELACIONAL_1,OPERADOR_RELACIONAL_2,
+        COMENTARIO,        
 	INCREMENTO,
-	Q0,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,
+	Q0,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10,Q11,Q12,Q13,Q14,Q15,
 	BLANK, BREAK_LINE,TAB,
 	ERROR
 } state;
@@ -106,8 +108,8 @@ state q0(char c){
 	if(isalpha(c))	return IDENTIFICADOR;
 	if(c=='"')		return Q13;
 	if(c=='>' || c=='<') 				return OPERADOR_RELACIONAL_1;
-	if(c=='%' || c == '/' || c=='*') 	return OPERADOR_3;
-
+	if(c=='%' || c=='*') 	return OPERADOR_3;
+        if(c=='/')              return OPERADOR_4;
 	return ERROR;
 }
 
@@ -156,6 +158,23 @@ state q13(char c){
 	return STRING;
 }
 
+state q15(char c)
+{
+    if(c=='\n')         return COMENTARIO;
+    return Q15;
+}
+
+state operador_4(char c)
+{
+    if(c=='/')              return Q15;
+    return Q14;
+    
+}
+
+void comentario(buffer *b)
+{
+    
+}
 void blank(buffer * b){
 
 }
@@ -198,7 +217,15 @@ void q12(buffer * b){
 
 	//retorna identificador;
 	backward(b);
-	returnToken(b,4);
+        if(isRESERVADA(b))
+        {
+            if(isBOOL(b))
+            returnToken(b,3);
+            else
+            returnToken(b,5);    
+        }    
+        else
+        returnToken(b,4);    
 }
 
 void ponto_virgula(buffer * b){
@@ -286,5 +313,13 @@ void error(buffer * b){
 	//retorna erro
 	returnToken(b,16);
 }
+
+void q14(buffer *b)
+{
+    //retorna OPERADOR_RELACIONAL
+    backward(b);
+    returnToken(b,13);
+}
+
 
 #endif
